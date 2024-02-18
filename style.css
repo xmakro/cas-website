@@ -262,7 +262,6 @@ p {
 }
 
 @media only screen and (max-width: 980px) {
-
     .desktop {
         display: none;
     }
