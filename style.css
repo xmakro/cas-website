@@ -283,4 +283,12 @@ p {
     .sidepanel {
         flex-direction: column;
     }
+
+    .headertext {
+        top: -250px;
+    }
+
+    .headertext .small {
+        font-size: 1.3rem;
+    }
 }
