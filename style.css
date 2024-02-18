@@ -22,7 +22,11 @@ h2 {
     top: 0;
     width: 100%;
     background-color: #eee;
-    z-index: 1;
+    z-index: 3;
+}
+
+.topbar {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 32px 0px;
 }
 
 .logo {
@@ -49,6 +53,12 @@ h2 {
     font-size: 1rem;
     padding: 0.7rem 1.2rem;
     text-decoration: none;
+    margin-top: 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar a:hover {
+    border-bottom: 2px solid rgb(17, 85, 211);
 }
 
 .navbar a.active {
@@ -173,6 +183,13 @@ h2 {
 .sitemap {
     color: white;
     padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.sitemap span {
+    flex: 1;
 }
 
 .sitemap a {
