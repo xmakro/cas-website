@@ -1,0 +1,174 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    overscroll-behavior: none;
+    background-color: #eee;
+}
+
+p {
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+    padding: 2rem 0 1.5rem 0;
+    margin-block: 0;
+}
+
+#navtoggle {
+    display: none;
+}
+
+.topbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #eee;
+}
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.space {
+    flex-grow: 1;
+    flex: 1;
+}
+
+.navbar a {
+    color: rgba(33, 107, 246);
+    display: block;
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+    text-decoration: none;
+}
+
+.navbar a.active {
+    background-color: #ddd;
+}
+
+.header {
+    background-image: url('images/wide2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 380px;
+    height: 380px;
+    margin-top: 100px;
+}
+
+.headertext {
+    align-items: start;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    padding-top: 9rem;
+}
+
+.headertext .large {
+    font-size: 2.3rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 1rem 1rem;
+}
+
+.headertext .small {
+    font-size: 1.8rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 1rem 1rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.content {
+    padding: 1rem;
+}
+
+.areas {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.areas>div {
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.areas>div>img {
+    width: 50%;
+    flex: 1;
+}
+
+.areas>div>div {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.areas>div>p {
+    text-align: center;
+}
+
+.blocks {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem
+}
+
+.blocks>div {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+}
+
+.blocks>div>img {
+    display: block;
+    width: 100%;
+}
+
+.blocks>div>a {
+    color: rgb(17, 85, 211);
+    text-decoration: none;
+    flex: 1;
+}
+
+.blocks>div:hover {
+    cursor: pointer;
+}
+
+.blocks>div:hover a {
+    text-decoration: underline;
+}
+
+.footer {
+    background: #333;
+}
+
+.sitemap {
+    color: white;
+    padding: 1rem;
+}

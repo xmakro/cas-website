@@ -3,195 +3,271 @@
 
 <head>
     <meta charset="utf-8">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-        }
-
-        .header {
-            min-height: 300px;
-            height: 300px;
-            position: absolute;
-            top: 0;
-            width: 100%;
-        }
-
-        .headerback {
-            background-image: url("header.webp");
-            background-size: cover;
-            background-position: 0 10%;
-        }
-
-        .headertitle {
-            align-items: start;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            padding-top: 2rem;
-            gap: 0.5rem;
-            justify-content: center;
-            height: 300px;
-        }
-
-        .headertitle .large {
-            font-size: 2rem;
-            background-color: rgba(0, 0, 0, 0.3);
-            padding: 0.5rem 1rem;
-        }
-
-        .headertitle .small {
-            font-size: 1.5rem;
-            background-color: rgba(0, 0, 0, 0.3);
-            padding: 0.5rem 1rem;
-        }
-
-        .topbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
-
-        html:not([data-scroll='0']) .topbar {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .logo {
-            color: white;
-            font-size: 2rem;
-            padding: 1rem;
-        }
-
-        .navbar {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .space {
-            flex-grow: 1;
-            flex: 1;
-        }
-
-        .navbar a {
-            color: white;
-            font-size: 1rem;
-            text-decoration: none;
-            display: block;
-            padding: 0.7rem 1.2rem;
-            border-radius: 0.5rem;
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .navbar a.active {
-            background-color: rgba(251, 67, 67, 0.7);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .content {
-            background-color: #eee;
-            margin-top: 300px;
-            padding: 1rem;
-            height: 800px;
-        }
-
-        .blocks {
-            display: flex;
-            flex-direction: row;
-            gap: 1rem
-        }
-
-        .blocks>div {
-            padding: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 1rem;
-        }
-
-        .blocks>div>div {
-            font-weight: bold;
-        }
-
-        .blocks ul {
-            padding-left: 1rem;
-        }
-
-        .footer {
-            background: #333;
-        }
-
-        .sitemap {
-            color: white;
-            padding: 1rem;
-        }
-    </style>
-    <script>
-        const storeScroll = () => {
-            document.documentElement.dataset.scroll = window.scrollY;
-        };
-        document.addEventListener('scroll', storeScroll);
-        storeScroll();
-    </script>
+    <link href="style.css" rel="stylesheet">
+    <script src="app.js"></script>
 </head>
 
 <body>
-    <div class="header headerback"></div>
+    <img id="navtoggle" src="images/menu.png">
+
+    <div class="topbar">
+        <div class="navbar container">
+            <div class="logo"><img src="images/logo1x.png" height="80" /></div>
+            <div class="space"></div>
+            <a href="#start">Start</a>
+            <a href="#supply-chain">Supply chain</a>
+            <a href="#reverse-engineering">Reverse</a>
+            <a href="#warehouse">Warehouse</a>
+            <a href="#ondemand">On Demand</a>
+            <a href="#about">Über uns</a>
+            <a href="#contact">Kontakt</a>
+        </div>
+    </div>
 
     <div class="header">
-        <div class="headertitle container">
+        <div class="headertext container">
             <div class="large">Ersatzteile auf Abruf</div>
             <div class="small">Reduzieren Sie Lagerkosten mit Digital Casting</div>
         </div>
     </div>
 
-    <div class="topbar">
-        <div class="navbar container">
-            <div class="logo">CAS</div>
-            <div class="space"></div>
-            <a href="/home">Home</a>
-            <a href="/services" class="active">Services</a>
-            <a href="/about">About Us</a>
-            <a href="/resources">Resources</a>
-            <a href="/contact">Contact Us</a>
-        </div>
-    </div>
+    <div id="content"></div>
 
-    <div class="content">
-        <div class="blocks container">
-            <div>
-                <div>Supply Chain Transformation</div>
-                <ul>
-                    <li>Digitalisierung: Effizienzsteigerung, Kostenreduktion.</li>
-                    <li>Flexibilität: Schnelle Anpassung an Marktwandel.</li>
-                </ul>
+    <template id="start">
+        <div class="content container">
+            <h2>Maximaler Gewinn, Minimale Investition</h2>
+
+            <p>Mit CAS-Casting revolutionieren Kunden ihre Lieferketten, steigern die Effizienz und schützen
+                gleichzeitig den Planeten durch eine signifikante Reduktion ihres CO2-Fußabdrucks.</p>
+
+            <div class="areas">
+                <div>
+                    <img src="images/ohnerand.png">
+                    <div>Nachhaltigkeit</div>
+                    <p>Reduzieren Sie die CO2-Emissionen in Ihrer Lieferkette</p>
+                </div>
+                <div>
+                    <img src="images/ohnerand.png">
+                    <div>Kosteneffizienz</div>
+                    <p>Sparen Sie bis zu 50% bei Lagerkosten</p>
+                </div>
+                <div>
+                    <img src="images/ohnerand.png">
+                    <div>Fertigung auf Anfrage</div>
+                    <p>Verkürzen Sie die Durchlaufzeit um bis zu 50%</p>
+                </div>
             </div>
-            <div>
-                <div>Reverse Engineering/Rapid Prototyping</div>
-                <ul>
-                    <li>Schnelligkeit: Rasche Prototypenerstellung, Designoptimierung.</li>
-                    <li>Innovation: Maßgeschneiderte Lösungen, flexible Anpassungen.</li>
-                </ul>
-            </div>
-            <div>
-                <div>Digital Warehouse</div>
-                <ul>
-                    <li>Einfacher Zugriff: Sofortiger, sicherer Datenzugang.</li>
-                    <li>Effizienz: Reduzierung physischer Lagerkosten.</li>
-                </ul>
-            </div>
-            <div>
-                <div>On-Demand Manufacturing</div>
-                <ul>
-                    <li>Flexibilität: Produktion nach Bedarf.</li>
-                    <li>Effizienz: Kosteneinsparungen, schnelle Markteinführung.</li>
-                </ul>
+
+            <h2>Warum CAS? Der Schnittpunkt von Innovation und Effizienz</h2>
+
+            <p><b>Meisterklasse in Digitalisierung:</b> Bei CAS verschmelzen wegweisende Digital-Expertise in Supply
+                Chain und
+                Prototyping mit tiefgreifendem Know-how in der Gießereitechnik. Wir setzen neue Maßstäbe in Sachen
+                Effizienz und Innovation.</p>
+            <br>
+            <p><b>Vorreiter in Technologie:</b> Unsere Vision treibt uns an, Lagerhaltung und Produktionsstätten
+                durch
+                moderne
+                digitale Lösungen zu transformieren. Wir sind nicht nur Teil der Zukunft - wir gestalten sie.</p>
+            <br>
+            <p><b>Innovation als Effizienzmotor:</b> CAS verwandelt mit maßgeschneiderter On-Demand-Fertigung
+                Produktionslandschaften. Im Zentrum unseres Schaffens steht die Gießereiexpertise, die uns
+                ermöglicht,
+                branchenführende Innovationen zu liefern, die Ihre Produktionsprozesse revolutionieren.</p>
+
+            <h2>Unsere Dienstleistungen</h2>
+
+            <div class="blocks">
+                <div>
+                    <img src="images/main.webp">
+                    <a href="#supply-chain">Supply Chain Transformation</a>
+                    <span>Digitalisierung, Flexibilität</span>
+                </div>
+                <div>
+                    <img src="images/back2.png">
+                    <a href="#reverse-engineering">Reverse Engineering / Rapid Prototyping</a>
+                    <span>Schnelligkeit, Innovation</span>
+                </div>
+                <div>
+                    <img src="images/main.webp">
+                    <a href="#warehouse">Digital Warehouse</a>
+                    <span>Einfacher Zugriff, Effizienz</span>
+                </div>
+                <div>
+                    <img src="images/back2.png">
+                    <a href="#ondemand">On-Demand Manufacturing</a>
+                    <span>Flexibilität, Effizienz</span>
+                </div>
             </div>
         </div>
-    </div>
+    </template>
+
+    <template id="supply-chain">
+        <div class="content container">
+            <h2>Optimieren Sie Ihre Supply Chain mit CAS Casting</h2>
+
+            <p>Transformieren Sie Ihre Lieferkette von Grund auf mit CAS Casting. Beginnend mit einer umfassenden
+                Analyse Ihrer Lagerbestände, bieten wir maßgeschneiderte Lösungen für digitales Lagermanagement und
+                bedarfsorientierte Fertigung. Unser Expertenteam, bestehend aus spezialisierten Ingenieuren, führt Sie
+                in die Zukunft der Fertigungstechnologie.</p>
+
+            <p>Unsere Dienstleistungen beinhalten die Durchführung von Pilotprojekten zur Förderung der Digitalisierung
+                und additiven Fertigung, technische Bewertungen und Wirtschaftlichkeitsanalysen von Ersatzteilen.
+                Entdecken Sie die Vorteile:</p>
+
+            <ul>
+                <li><b>Effizienzsteigerung</b>: Optimieren Sie Ihre Lagerhaltung und reduzieren Sie Kosten.</li>
+                <li><b>Kostensenkung</b>: Erhalten Sie präzise Kontrolle über Bestände und Ressourcen.</li>
+                <li><b>Schnellere Markteinführung</b>: Profitieren Sie von bedarfsorientierter Produktion.</li>
+                <li><b>Informierte Entscheidungen</b>: Nutzen Sie eine solide Datengrundlage für Ihre Strategie.</li>
+                <li><b>Höhere Produktqualität</b>: Verbessern Sie Ihre Produktionsverfahren.</li>
+                <li><b>Mehr Flexibilität</b>: Reagieren Sie effektiv auf Marktveränderungen.</li>
+                <li><b>Nachhaltigkeit</b>: Führen Sie Ihr Geschäft ressourceneffizienter.</li>
+            </ul>
+
+            <p>Mit CAS Casting an Ihrer Seite sind Sie bestens gerüstet, um Ihre Produktionsprozesse zu modernisieren
+                und für die Herausforderungen der Zukunft vorbereitet zu sein.</p>
+        </div>
+    </template>
+
+    <template id="reverse-engineering">
+        <div class="content container">
+            <h2>Rapid Prototyping und Reverse Engineering</h2>
+
+            <p>Bei CAS Casting beschleunigen wir Ihre Produktentwicklung mit Rapid Prototyping. Unsere fortschrittlichen
+                3D-Drucktechnologien verwandeln Ihre Ideen schnell in präzise Prototypen, um Designanpassungen zu
+                beschleunigen und Produkte schneller zur Marktreife zu bringen. Profitieren Sie von:</p>
+
+            <ul>
+                <li>Schneller Umsetzung von 2D-Entwürfen in 3D-Modelle</li>
+                <li>Effizienter Designoptimierung durch schnelle Anpassungen</li>
+                <li>Kostensenkungen und verkürzten Entwicklungszyklen</li>
+            </ul>
+
+            <p>Mit unserem Reverse Engineering-Service digitalisieren und optimieren wir Ihre bestehenden Teile, um
+                deren Leistung zu verbessern. Wir erstellen digitale Zwillinge durch 3D-Scans und führen
+                Ingenieuranalysen durch, um die Produktqualität zu erhöhen. Unsere Services umfassen:</p>
+
+            <ul>
+                <li>Digitale Rekonstruktion physischer Teile für Analyse und Produktion</li>
+                <li>Verbesserung mechanischer und funktioneller Eigenschaften Ihrer Produkte</li>
+            </ul>
+
+            <p>Neu integriert bei CAS Casting: Gießgerechte Konstruktion. Optimieren Sie Ihre Produkte für den
+                Gießprozess, um Material- und Produktionskosten zu senken und die Fertigungseffizienz zu steigern.
+                Unsere Expertise garantiert:</p>
+
+            <ul>
+                <li>Designanpassungen für optimierte Gießbarkeit</li>
+                <li>Reduzierte Fehlerquoten und verbesserte Produktqualität</li>
+            </ul>
+
+            <p>CAS Casting vereint Rapid Prototyping, Reverse Engineering und gießgerechte Konstruktion, um Ihre
+                Entwicklungs- und Fertigungsprozesse zu optimieren. Wir unterstützen eine nachhaltigere Produktion durch
+                Material- und Energieeinsparungen. Lassen Sie uns Ihre Produktentwicklung in die Zukunft führen.</p>
+        </div>
+    </template>
+
+    <template id="ondemand">
+        <div class="content container">
+            <h2>On-Demand Fertigung: Ihre agile Produktionslösung mit CAS Casting</h2>
+
+            <p>Mit CAS Casting erleben Sie, wie additive Fertigung (AM) die Herstellung individueller Lösungen direkt
+                aus digitalen 3D-Modellen revolutioniert. Diese Technologie minimiert Lagerkosten und Materialabfall,
+                indem genau nach Bedarf produziert wird. AM ermöglicht nicht nur die schnelle Entwicklung von
+                Prototypen, sondern auch die Umsetzung komplexer Designs, die mit traditionellen Methoden nicht möglich
+                wären. Zudem fördert die lokale Produktion eine schnelle Markteinführung und unterstützt die Reduzierung
+                des CO2-Fußabdrucks.</p>
+
+            <h3>Erweitern Sie Ihre Möglichkeiten mit 3D-Sanddruck (Binder Jetting)</h3>
+
+            <p>Nutzen Sie 3D-Sanddruck für noch mehr Flexibilität und Präzision in der Herstellung von Gussformen und
+                Kernstücken. Diese Technologien bieten herausragende Möglichkeiten für die Produktion komplexer Designs
+                ohne die Einschränkungen konventioneller Verfahren.</p>
+
+            <h3>Optimieren Sie Ihre Produktion mit digitaler Präzision</h3>
+
+            <p>Profitieren Sie von unserem digitalen Lager, um Ihre Designs sicher zu speichern und nur bei Bedarf zu
+                produzieren. Unser Expertenteam unterstützt Sie von der Konzeption bis zum fertigen Produkt, wobei
+                unsere Plattform und unser Produktionsnetzwerk eine effiziente und umweltschonende Herstellung
+                gewährleisten.</p>
+
+            <p>CAS Casting bringt Ihre Produktion mit On-Demand Fertigung und 3D-Sanddruck auf das nächste Level.
+                Treiben Sie Ihr Unternehmen voran mit unserer Expertise in effizienter und nachhaltiger Fertigung.</p>
+        </div>
+    </template>
+
+    <template id="warehouse">
+        <div class="content container">
+            <h2>Ihr digitales Lager mit CAS Casting: Einfach, sicher, zukunftsorientiert</h2>
+
+            <p>Entdecken Sie das <b>Digital Warehouse</b> von CAS Casting - Ihr Schlüssel zu einem effizienten und
+                flexiblen
+                Ersatzteillager. Mit unserem digitalen Lager verwahren wir Ihre Daten und Dateien sicher und bieten
+                Ihnen sofortigen Zugriff auf alle Ihre Ersatzteile mit nur einem Klick. Bauen Sie Ihr digitales Inventar
+                mit exakten 3D-Modellen jedes druckbaren Ersatzteils auf und seien Sie bereit für die Zukunft.
+            </p>
+
+            <h3>Reagieren Sie flexibel auf Marktveränderungen</h3>
+
+            <p>Mit CAS Casting's digitalen Lagerlösungen passen Sie sich nahtlos an Marktveränderungen und
+                Kundenbedürfnisse an. Die Integration von Additiver Fertigung ermöglicht es Ihnen, Ersatzteile
+                bedarfsgerecht zu produzieren, wodurch Sie die Effizienz Ihres Supply-Chain-Managements steigern und die
+                herkömmlichen Herausforderungen physischer Lager - wie hohe Kosten und Komplexität - überwinden.</p>
+
+            <h3>Vorteile des digitalen Warehousing:</h3>
+
+            <ul>
+                <li><b>Reduzierung physischer Lagerflächen</b>: Sparen Sie Platz und Kosten.</li>
+                <li><b>Vermeidung von Teilveralterung und Abfall</b>: Steigern Sie Ihre Effizienz und Nachhaltigkeit.
+                </li>
+                <li><b>Kosten- und Zeitersparnis</b>: Beschleunigen Sie Ihre Lieferprozesse.</li>
+            </ul>
+
+            <p>Durch die Minimierung Ihrer Kohlenstoffemissionen trägt das digitale Warehousing von CAS Casting nicht
+                nur zur Effizienzsteigerung bei, sondern unterstützt auch aktiv die Nachhaltigkeitsziele Ihres
+                Unternehmens. Machen Sie den Schritt in eine effiziente, flexible und umweltfreundliche Zukunft mit CAS
+                Casting.</p>
+        </div>
+    </template>
+
+    <template id="about">
+        <div class="content container">
+            <h2>Über uns</h2>
+
+            <h3>Willkommen bei CAS Casting</h3>
+
+            <h3>Ihr Partner für digitale Gießerei- und Konstruktionslösungen</h3>
+
+            <p>Bei CAS Casting kombinieren wir bewährte Traditionen mit modernsten Technologien, um Ihre
+                Produktionsprozesse zu revolutionieren. Entdecken Sie, wie unsere innovativen Dienstleistungen wie
+                Reverse Engineering, Digital Warehouse und On-Demand Manufacturing Ihr Unternehmen zukunftsfähig machen.
+            </p>
+
+            <h3>Innovation und Effizienz</h3>
+            <p>Dank unserer tiefgehenden Gießerei Branchenkenntnisse bieten wir maßgeschneiderte Lösungen, die auf Ihre
+                spezifischen Bedürfnisse zugeschnitten sind. Wir verbessern und sichern Ihre Fertigungsprozesse für die
+                Zukunft, maximieren Ihre Produktionseffizienz und verkürzen Fertigungszeiten deutlich.</p>
+
+            <h3>Flexibilität in einem dynamischen Markt</h3>
+
+            <p>Die schnelle Anpassung an Marktveränderungen ist entscheidend. CAS Casting hilft Ihnen dabei, durch den
+                Einsatz fortschrittlicher Technologien Ihre Lagerhaltung zu optimieren und flexibel auf Marktbedürfnisse
+                zu reagieren.</p>
+
+            <h3>Unser Engagement</h3>
+
+            <p>Ihre Zufriedenheit steht bei uns an erster Stelle. Wir arbeiten eng mit Ihnen zusammen, um die
+                Erwartungen
+                mit unserem erfahrenen Team von Ingenieuren und Technologieexperten zu übertreffen.</p>
+
+            <h3>Zusammen in die Zukunft</h3>
+
+            <p>Kontaktieren Sie CAS Casting, um zu erfahren, wie wir Ihre Produktionsprozesse transformieren können. Wir
+                sind bereit, mit Ihnen die Herausforderungen von morgen anzugehen und gemeinsam eine erfolgreiche
+                Zukunft zu gestalten.</p>
+        </div>
+    </template>
 
     <div class="footer">
         <div class="sitemap container">
