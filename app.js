@@ -1,5 +1,6 @@
 function toggleNav() {
     document.body.classList.toggle('open');
+    window.scrollTo(0, 0);
 }
 
 function closeNav() {
