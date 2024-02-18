@@ -1,20 +1,54 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
     margin: 0;
-    font-size: 1.2rem;
-    line-height: 1.7rem;
     overscroll-behavior: none;
     background-color: #eee;
+    margin-top: 110px;
 }
 
 h2 {
     margin: 0;
-    padding: 2rem 0 1.5rem 0;
+    padding: 2rem 0 1rem 0;
     margin-block: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.6rem;
 }
 
 #navtoggle {
     display: none;
+    height: 2rem;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.desktop {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.mobile {
+    display: none;
+    flex-direction: column;
+    background: #2d3c47;
+}
+
+.mobile a {
+    display: block;
+    padding: 1rem;
+    color: #eee;
+}
+
+.mobile a.active {
+    background: #eee;
+    color: #333333;
 }
 
 .topbar {
@@ -52,7 +86,6 @@ h2 {
     display: block;
     font-size: 1rem;
     padding: 0.7rem 1.2rem;
-    text-decoration: none;
     margin-top: 2px;
     border-bottom: 2px solid transparent;
 }
@@ -69,7 +102,6 @@ h2 {
     background-repeat: no-repeat;
     background-size: contain;
     height: 380px;
-    margin-top: 100px;
 }
 
 .header img {
@@ -92,17 +124,17 @@ h2 {
 .headertext .large {
     font-size: 2.3rem;
     background-color: rgba(0, 0, 0, 0.4);
-    padding: 1rem 1rem;
+    padding: 0.3rem 1rem;
 }
 
 .headertext .small {
     font-size: 1.8rem;
     background-color: rgba(0, 0, 0, 0.4);
-    padding: 1rem 1rem;
+    padding: 0.3rem 1rem;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1150px;
     margin: auto;
 }
 
@@ -164,7 +196,6 @@ h2 {
 
 .blocks>div>a {
     color: rgb(17, 85, 211);
-    text-decoration: none;
     flex: 1;
 }
 
@@ -174,6 +205,40 @@ h2 {
 
 .blocks>div:hover a {
     text-decoration: underline;
+}
+
+.sidepanel {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.sidepanel aside {
+    margin-top: 1rem;
+}
+
+.sidepanel aside div {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.sidepanel aside a {
+    color: black;
+    margin-left: 20px;
+    padding: 1rem 0;
+    border-left: 2px solid #333;
+}
+
+.sidepanel aside a::before {
+    content: '⬤';
+    position: relative;
+    left: -16px;
+    font-size: 25px;
+}
+
+.sidepanel aside a.active {
+    color: rgb(27, 88, 203);
 }
 
 .footer {
@@ -194,5 +259,29 @@ h2 {
 
 .sitemap a {
     color: rgb(218, 231, 255);
-    text-decoration: none;
+}
+
+@media only screen and (max-width: 980px) {
+
+    .desktop {
+        display: none;
+    }
+
+    .open .mobile {
+        display: flex;
+    }
+
+    #navtoggle {
+        display: block;
+    }
+
+    .sidepanel {
+        gap: 0;
+    }
+
+    .blocks,
+    .areas,
+    .sidepanel {
+        flex-direction: column;
+    }
 }
