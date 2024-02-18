@@ -7,10 +7,6 @@ body {
     background-color: #eee;
 }
 
-p {
-    margin: 0;
-}
-
 h2 {
     margin: 0;
     padding: 2rem 0 1.5rem 0;
@@ -26,6 +22,7 @@ h2 {
     top: 0;
     width: 100%;
     background-color: #eee;
+    z-index: 1;
 }
 
 .logo {
@@ -47,7 +44,7 @@ h2 {
 }
 
 .navbar a {
-    color: rgba(33, 107, 246);
+    color: rgb(27, 88, 203);
     display: block;
     font-size: 1rem;
     padding: 0.7rem 1.2rem;
@@ -59,12 +56,16 @@ h2 {
 }
 
 .header {
-    background-image: url('images/wide2.png');
     background-repeat: no-repeat;
     background-size: contain;
-    min-height: 380px;
     height: 380px;
     margin-top: 100px;
+}
+
+.header img {
+    object-fit: cover;
+    height: 380px;
+    width: 100%;
 }
 
 .headertext {
@@ -74,7 +75,8 @@ h2 {
     flex-direction: column;
     gap: 0.5rem;
     justify-content: center;
-    padding-top: 9rem;
+    position: relative;
+    top: -200px;
 }
 
 .headertext .large {
@@ -165,10 +167,15 @@ h2 {
 }
 
 .footer {
-    background: #333;
+    background: rgb(40, 42, 60)
 }
 
 .sitemap {
     color: white;
     padding: 1rem;
+}
+
+.sitemap a {
+    color: rgb(218, 231, 255);
+    text-decoration: none;
 }

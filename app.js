@@ -32,7 +32,10 @@ function load() {
     navtoggle.addEventListener('click', toggleNav);
 }
 
-window.onhashchange = load;
+window.onhashchange = () => {
+    window.scrollTo(0, 0);
+    load();
+};
 window.onload = load;
 
 // Scroll overlay.
