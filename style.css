@@ -236,7 +236,7 @@ p {
 .sidepanel aside a::before {
     content: '⬤';
     position: relative;
-    left: -16px;
+    left: -12px;
     font-size: 25px;
 }
 
