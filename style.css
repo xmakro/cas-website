@@ -91,17 +91,26 @@ p {
     border-bottom: 2px solid transparent;
 }
 
+.dropdown-container>a:hover {
+    cursor: default;
+}
+
 .desktop>a:hover,
 .dropdown-container:hover>a {
     border-bottom: 2px solid rgb(17, 85, 211);
 }
 
 .desktop a.active {
-    background: #e5e5e5;
+    background: #e5e5e5 !important;
 }
 
 .desktop div:hover .dropdown-content {
     display: block;
+}
+
+.desktop>a:hover,
+.dropdown-content a:hover {
+    background-color: #eee;
 }
 
 .dropdown-container {
@@ -124,10 +133,7 @@ p {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
+    text-align: center;
 }
 
 .header {
