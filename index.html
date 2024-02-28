@@ -688,6 +688,40 @@
         </div>
     </template>
 
+    <template id="contact">
+        <div class="header">
+            <img src="images/logistic.png">
+            <div class="headertext container">
+                <div class="large">Kontakt</div>
+                <div class="small">Reduzieren Sie Lagerkosten mit Digital Casting</div>
+            </div>
+        </div>
+
+        <div class="content container sidepanel">
+            <main>
+                <form action="/mail.php?subject=Rezeptanforderung" method="post">
+                    <h2>Formular</h2>
+                    <p><label>Name</label> <input type="text" name="name" required></p>
+                    <p><label>E-Mail</label> <input type="text" name="email" required></p>
+                    <p><label>Telefonnummer (optional)</label> <input type="text" name="phone" required></p>
+                    <p><label>Anliegen</label> <textarea name="text" rows="8"></textarea></p>
+                    <p><button type="submit">Absenden</button></p>
+                </form>
+            </main>
+            <aside>
+                <h3>Kontakt</h3>
+                <div>
+                    <h4>Addresse</h4>
+                    <p>Kirchplatz 5<br>86937 Scheuring</p>
+                    <h4>Telefon</h4>
+                    <p>+49 (0) …</p>
+                    <h4>E-Mail</h4>
+                    <p>info@cas-casting.com</p>
+                </div>
+            </aside>
+        </div>
+    </template>
+
     <div class="footer">
         <div class="sitemap container">
             <span>CAS Casting 2024</span>

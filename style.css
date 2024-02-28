@@ -248,6 +248,10 @@ p {
     gap: 2rem;
 }
 
+.sidepanel main {
+    flex: 1;
+}
+
 .sidepanel aside {
     margin-top: 1rem;
 }
@@ -294,6 +298,22 @@ p {
 
 .sitemap a {
     color: rgb(218, 231, 255);
+}
+
+form {
+    width: 70%;
+}
+
+form input,
+form textarea {
+    padding: 8px;
+    display: block;
+    margin-top: 8px;
+    width: 100%;
+}
+
+form button {
+    padding: 10px;
 }
 
 @media only screen and (max-width: 980px) {
