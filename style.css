@@ -4,7 +4,7 @@ body {
     margin: 0;
     overscroll-behavior: none;
     background: #fafafa;
-    margin-top: 84px;
+    margin-top: 70px;
 }
 
 h2 {
@@ -57,9 +57,6 @@ p {
     width: 100%;
     background: #fafafa;
     z-index: 3;
-}
-
-.topbar {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 32px 0px;
 }
 
@@ -74,6 +71,7 @@ p {
     flex-direction: row;
     align-items: center;
     gap: 1rem;
+    height: 70px;
 }
 
 .space {
