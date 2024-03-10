@@ -269,9 +269,12 @@ p {
 }
 
 .sidepanel aside div {
+    min-width: 300px;
+}
+
+.sidelinks {
     display: flex;
     flex-direction: column;
-    min-width: 300px;
 }
 
 .sidepanel aside a {
