@@ -9,6 +9,7 @@
     <link rel="preload" as="image" href="images/digitalwarehouse.png">
     <link rel="preload" as="image" href="images/reverseengineering2.png">
     <script src="app.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>CAS Casting</title>
     <!-- Twitter card -->
     <meta content="@cascasting" name="twitter:creator">
@@ -784,8 +785,9 @@
                     <h2>Kontakt</h2>
                     <p><label>Name</label> <input type="text" name="name" required></p>
                     <p><label>E-Mail</label> <input type="text" name="email" required></p>
-                    <p><label>Telefonnummer (optional)</label> <input type="text" name="phone" required></p>
-                    <p><label>Anliegen</label> <textarea name="text" rows="8"></textarea></p>
+                    <p><label>Telefonnummer (optional)</label> <input type="text" name="phone"></p>
+                    <p><label>Anliegen</label> <textarea name="text" rows="8" required></textarea></p>
+                    <div id="g-recaptcha" data-sitekey="6Le10aEpAAAAANMNnVxrcNHAKHD13vffgRy7scht"></div>
                     <p><button type="submit">Absenden</button></p>
                 </form>
             </main>

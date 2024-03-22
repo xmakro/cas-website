@@ -17,6 +17,9 @@ function load() {
     let content = document.querySelector('#content');
     content.innerHTML = '';
     content.appendChild(clone);
+    if (cur == 'contact') {
+        grecaptcha.render("g-recaptcha")
+    }
 
     // Update links.
     for (let e of document.querySelectorAll('a')) {
