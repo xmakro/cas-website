@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="preload" as="image" href="images/digitalwarehouse.png">
-    <link rel="preload" as="image" href="images/reverseengineering2.png">
     <script src="app.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>CAS Casting</title>
@@ -33,7 +31,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
     <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
-    <meta name="msapplication-config" content="browserconfig.xml?v=240316072026">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml?v=240316072026">
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon-57x57.png?v=240316072026">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon-60x60.png?v=240316072026">
     <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png?v=240316072026">
@@ -876,7 +874,8 @@
                 CO2-Fußabdruck einsehen. Das Angebot bekommen Sie per E-Mail zugeschickt.
 
             </p>
-            <form action="/mail.php?subject=Anfrage" method="post">
+            <form onsubmit="handleSubmit(event)">
+                <input type="hidden" name="subject" value="Anfrage" />
                 <div class="onerow">
                     <p><label>Bauteillänge (mm)</label> <input type="number" name="length" value="1200" required></p>
                     <p><label>Bauteilbreite (mm)</label> <input type="number" name="width" value="800" required></p>
@@ -885,7 +884,7 @@
                 </div>
                 <p>
                     <label>Ihre Konstruktion als CAD-Datei (optional)</label>
-                    <input type="file" name="cad" required>
+                    <input type="file" name="cad">
                 </p>
                 <p><label>Anliegen</label> <textarea name="text" rows="4" required></textarea></p>
                 <div class="onerow">
@@ -918,7 +917,8 @@
 
         <div class="content container sidepanel">
             <main>
-                <form action="/mail.php?subject=Webformular" method="post">
+                <form onsubmit="handleSubmit(event)">
+                    <input type="hidden" name="subject" value="Webformular" />
                     <h2>Kontakt</h2>
                     <p><label>Name</label> <input type="text" name="name" required></p>
                     <p><label>E-Mail</label> <input type="text" name="email" required></p>

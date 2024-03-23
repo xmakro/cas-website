@@ -36,11 +36,25 @@ function load() {
     navtoggle.addEventListener('click', toggleNav);
 }
 
+function handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    fetch("/mail.php", {
+        body: data,
+        method: "post",
+    }).then((response) => response.text()).then((text) => {
+        event.target.reset();
+        grecaptcha.reset();
+        alert(text);
+    })
+}
+
 window.onhashchange = () => {
     window.scrollTo(0, 0);
     load();
 };
 window.onload = load;
+
 
 // Scroll overlay.
 const storeScroll = () => {

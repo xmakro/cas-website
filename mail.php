@@ -21,7 +21,7 @@ if (!$result->success) {
 	exit;
 }
 
-$subject = $_GET["subject"];
+$subject = $_POST["subject"];
 if (!isset($subject)) {
 	echo "Fehler beim abschicken des Formulars.";
 	exit;
