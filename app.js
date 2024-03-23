@@ -17,7 +17,7 @@ function load() {
     let content = document.querySelector('#content');
     content.innerHTML = '';
     content.appendChild(clone);
-    if (cur == 'contact') {
+    if (cur == 'contact' || cur == 'quote') {
         grecaptcha.render("g-recaptcha")
     }
 

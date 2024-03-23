@@ -108,6 +108,23 @@ p {
     background: #e5e5e5 !important;
 }
 
+.desktop a.inverse {
+    background: rgb(17, 85, 211);
+    border-bottom: 2px solid rgb(12, 58, 142);
+    color: #eee;
+}
+
+.desktop a.inverse:hover {
+    background: rgb(13, 63, 155);
+    border-bottom: 2px solid rgb(8, 37, 91);
+    color: #eee;
+}
+
+.desktop a.inverse.active {
+    background: #666 !important;
+    border-bottom: 2px solid #222;
+}
+
 .desktop div:hover .dropdown-content {
     display: block;
 }
@@ -315,22 +332,43 @@ p {
     color: rgb(218, 231, 255);
 }
 
-form {
-    width: 70%;
+form p {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
 }
 
-form input,
-form textarea {
+form p input,
+form p textarea,
+form p select {
     padding: 8px;
     display: block;
     border: 1px solid #bbb;
     margin-top: 10px;
-    width: 100%;
 }
 
 form button {
     padding: 10px;
     border: 1px solid #999;
+}
+
+form div a {
+    color: rgb(12, 76, 195);
+}
+
+.onerow {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.onerow p {
+    flex: 1
+}
+
+#g-recaptcha {
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
 }
 
 @media only screen and (max-width: 980px) {
@@ -340,6 +378,11 @@ form button {
 
     .open .mobile {
         display: flex;
+    }
+
+    .onerow {
+        flex-direction: column;
+        gap: 0;
     }
 
     #navtoggle {
