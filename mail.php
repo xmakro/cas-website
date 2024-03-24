@@ -47,13 +47,14 @@ $mail->addAddress("info@cascasting.com", "CAS Info");
 $mail->Subject = $title;
 $mail->Body = $text;
 
-if (array_key_exists('userfile', $_FILES)) {
+$userfile = $_FILES['userfile'];
+if (is_uploaded_file($userfile['tmp_name'])) {
     // Extract an extension from the provided filename
-    $ext = PHPMailer::mb_pathinfo($_FILES['userfile']['name'], PATHINFO_EXTENSION);
+    $ext = PHPMailer::mb_pathinfo($userfile['name'], PATHINFO_EXTENSION);
     // Define a safe location to move the uploaded file to, preserving the extension
-    $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['userfile']['name'])) . '.' . $ext;
-    $filename = $_FILES['userfile']['name'];
-    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+    $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $userfile['name'])) . '.' . $ext;
+    $filename = $userfile['name'];
+    if (move_uploaded_file($userfile['tmp_name'], $uploadfile)) {
         if (!$mail->addAttachment($uploadfile, $filename)) {
             echo 'Failed to attach file ' . $filename;
             exit;
