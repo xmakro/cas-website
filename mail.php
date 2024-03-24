@@ -1,4 +1,13 @@
 <?php
+// ini_set('display_errors', '1');
+// ini_set('display_startup_errors', '1');
+// error_reporting(E_ALL);
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'vendor/autoload.php';
+
+# Verify recapatcha
 $post_data = http_build_query(
     array(
         'secret' => "6Le10aEpAAAAALCiSqwU69JpPI8u1-V5A_13fTVP",
@@ -21,11 +30,8 @@ if (!$result->success) {
 	exit;
 }
 
+# Send email
 $subject = $_POST["subject"];
-if (!isset($subject)) {
-	echo "Fehler beim abschicken des Formulars.";
-	exit;
-}
 $title = $subject . ': ' . $_POST["name"] . ' ' . date('d.m.Y');
 $text = "";
 foreach ($_POST as $key => $value)
@@ -34,6 +40,33 @@ foreach ($_POST as $key => $value)
 		$text .= "$key: $value\n";
 	}
 }
-mail('info@cascasting.com', $title, $text, 'From:formular@cascasting.com');
-echo "$subject erfolgreich per E-Mail abgeschickt.";
+
+$mail = new PHPMailer();
+$mail->setFrom("formular@cascasting.com", "Webforumlar");
+$mail->addAddress("info@cascasting.com", "CAS Info");
+$mail->Subject = $title;
+$mail->Body = $text;
+
+if (array_key_exists('userfile', $_FILES)) {
+    // Extract an extension from the provided filename
+    $ext = PHPMailer::mb_pathinfo($_FILES['userfile']['name'], PATHINFO_EXTENSION);
+    // Define a safe location to move the uploaded file to, preserving the extension
+    $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['userfile']['name'])) . '.' . $ext;
+    $filename = $_FILES['userfile']['name'];
+    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+        if (!$mail->addAttachment($uploadfile, $filename)) {
+            echo 'Failed to attach file ' . $filename;
+            exit;
+        }
+    } else {
+        echo 'Failed to move file to ' . $uploadfile;
+        exit;
+    }
+}
+
+if ($mail->send()) {
+    echo "$subject erfolgreich per E-Mail abgeschickt.";
+} else {
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+}
 ?>
