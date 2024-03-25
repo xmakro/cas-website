@@ -317,7 +317,7 @@ p {
 }
 
 .sitemap {
-    color: white;
+    color: rgba(125, 124, 124, 0.847);
     padding: 1rem;
     display: flex;
     flex-direction: row;
@@ -405,5 +405,9 @@ form div a {
 
     .headertext .small {
         font-size: 1.3rem;
+    }
+
+    .sitemap {
+        flex-direction: row;
     }
 }
