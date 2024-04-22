@@ -1,5 +1,5 @@
 +++
-title = "asd"
+title = "Start"
 
 [extra]
 image = "/images/Startseite_komprimiert.jpg"
