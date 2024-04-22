@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block title %}{{ page.title | safe }}{% endblock %}
+
+{% block content %}
+<div class="header">
+    <img src="{{ page.extra.image }}" alt="{{ page.extra.image_alt }}">
+    <div class="headertext container">
+        <div class="large">{{ page.extra.large }}</div>
+        <div class="small">{{ page.extra.small }}</div>
+    </div>
+</div>
+
+<div class="content container sidepanel">
+    <main>
+        {{ page.content | safe }}
+    </main>
+    <aside>
+        <h3>Our Services</h3>
+        <div class="sidelinks">
+            <a href="supply-chain">Inventory Check</a>
+            <a href="reverse-engineering">Reverse Engineering</a>
+            <a href="warehouse">Digital Warehouse</a>
+            <a href="ondemand">On Demand Manufacturing</a>
+            <a href="service">Service</a>
+        </div>
+    </aside>
+</div>
+{% endblock %}

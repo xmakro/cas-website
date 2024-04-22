@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block title %}{{ page.title | safe }}{% endblock %}
+
+{% block content %}
+<div class="header">
+    <img src="{{ page.extra.image }}" alt="{{ page.extra.image_alt }}">
+    <div class="headertext container">
+        <div class="large">{{ page.extra.large }}</div>
+        <div class="small">{{ page.extra.small }}</div>
+    </div>
+</div>
+
+<div class="content container">
+    {{ page.content | safe }}
+</div>
+{% endblock %}

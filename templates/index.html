@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+
+<head>
+    <!-- SEO Optimierung-->
+    <title>CAS Casting - {% block title %}{% endblock %}</title>
+    <meta name="description"
+        content="Steigern Sie mit CAS Casting Ihre Produktion: Spezialisiert auf 3D-Sanddruck und Rapid Prototyping für verbesserte und umweltfreundliche Prozesse.">
+    <meta name="keywords"
+        content="Gießereikonstruktion, Prototypenguss, 3D-Sanddruck, Reverse Engineering, Rapid Prototyping, Formkasten, Kernkasten, nachhaltige Produktion, Effizienzsteigerung, CO2-Reduktion, Lageroptimierung, digitale Gießereilösungen, On-Demand Fertigung, additive Fertigung">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cascasting.com">
+    <meta property="og:title" content="CAS Casting: Revolutionieren Sie Ihre Produktionsprozesse">
+    <meta property="og:description"
+        content="Effizientere und nachhaltigere Produktion mit CAS Casting: Expertise in Gießereikonstruktion und 3D-Sanddruck.">
+    <meta property="og:image" content="https://cascasting.com/images/Startseite_komprimiert.jpg">
+
+    <!-- Weitere Meta-Tags und Links können hier eingefügt werden -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="app.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Twitter card -->
+    <meta content="@cascasting" name="twitter:creator">
+    <meta content="@cascasting" name="twitter:site">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="CAS Casting" name="twitter:title">
+    <meta content="Von der Skizze zum Produkt - Schneller, flexibler, effizienter" name="twitter:description">
+    <meta content="Von der Skizze zum Produkt - Schneller, flexibler, effizienter" name="twitter:image:alt">
+    <meta content="/images/logo_nebeinander.png" alt="Logo von CAS Casting" name="twitter:image">
+    <!-- Facebook card -->
+    <meta content="/" property="og:url" />
+    <meta content="website" property="og:type" />
+    <meta content="CAS Casting" property="og:title" />
+    <meta content="Von der Skizze zum Produkt - Schneller, flexibler, effizienter" property="og:description">
+    <meta content="/images/logo_nebeinander.png" alt="Logo von CAS Casting" property="og:image" />
+    <!-- Favicon -->
+    <meta name="application-name" content="https://cascasting.com/">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="https://cascasting.com/">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml?v=240316072026">
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png?v=240316072026">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png?v=240316072026">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png?v=240316072026">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png?v=240316072026">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png?v=240316072026">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png?v=240316072026">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png?v=240316072026">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png?v=240316072026">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png?v=240316072026">
+    <link rel="icon" type="image/png" href="/favicon/android-chrome-36x36.png?v=240316072026" sizes="36x36">
+    <link rel="icon" type="image/png" href="/favicon/android-chrome-48x48.png?v=240316072026" sizes="48x48">
+    <link rel="icon" type="image/png" href="/favicon/android-chrome-72x72.png?v=240316072026" sizes="72x72">
+    <link rel="icon" type="image/png" href="/favicon/android-chrome-96x96.png?v=240316072026" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon/android-chrome-144x144.png?v=240316072026" sizes="144x144">
+    <link rel="icon" type="image/png" href="/favicon/android-chrome-192x192.png?v=240316072026" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png?v=240316072026" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png?v=240316072026" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png?v=240316072026" sizes="96x96">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico?v=240316072026">
+    <meta name="msapplication-TileImage" content="/favicon/mstile-150x150.png?v=240316072026">
+    <meta name="msapplication-square70x70logo" content="/favicon/mstile-70x70.png?v=240316072026">
+    <meta name="msapplication-square150x150logo" content="/favicon/mstile-150x150.png?v=240316072026">
+    <meta name="msapplication-wide310x150logo" content="/favicon/mstile-310x150.png?v=240316072026">
+    <meta name="msapplication-square310x310logo" content="/favicon/mstile-310x310.png?v=240316072026">
+    <link href="/favicon/apple-touch-startup-image-320x460.png?v=240316072026"
+        media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)"
+        rel="apple-touch-startup-image">
+    <link href="/favicon/apple-touch-startup-image-640x920.png?v=240316072026"
+        media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image">
+    <link href="/favicon/apple-touch-startup-image-640x1096.png?v=240316072026"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image">
+    <link href="/favicon/apple-touch-startup-image-748x1024.png?v=240316072026"
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 1) and (orientation: landscape)"
+        rel="apple-touch-startup-image">
+    <link href="/favicon/apple-touch-startup-image-750x1024.png?v=240316072026" media=""
+        rel="apple-touch-startup-image">
+    <link href="/favicon/apple-touch-startup-image-750x1294.png?v=240316072026"
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image">
+    <link href="/favicon/apple-touch-startup-image-768x1004.png?v=240316072026"
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 1) and (orientation: portrait)"
+        rel="apple-touch-startup-image">
+    <link href="/favicon/apple-touch-startup-image-1182x2208.png?v=240316072026"
+        media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+        rel="apple-touch-startup-image">
+    <link href="/favicon/apple-touch-startup-image-1242x2148.png?v=240316072026"
+        media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+        rel="apple-touch-startup-image">
+    <link href="/favicon/apple-touch-startup-image-1496x2048.png?v=240316072026"
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        rel="apple-touch-startup-image">
+    <link href="/favicon/apple-touch-startup-image-1536x2008.png?v=240316072026"
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        rel="apple-touch-startup-image">
+    <link rel="manifest" href="/favicon/manifest.json?v=240316072026" />
+
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.cascasting.com/sitemap.xml">
+
+    <!-- Google Index -->
+    <meta name="google-site-verification" content="xpJcmpr8sPD8lTVZGM7PINyWJPVJ27qMXmiUFYA15jc" />
+</head>
+
+<body>
+
+    <div class="topbar">
+        <div class="navbar container">
+            <a href="start"><img src="/images/logo_nebeinander.png" alt="Logo von CAS Casting" height="50" /></a>
+            <div class="space"></div>
+            <div class="desktop">
+                <a href="about">Über uns</a>
+                <div class="dropdown-container">
+                    <a href="dienstleistungen">Dienstleistungen</a>
+                    <div style="position: relative; width: 0; height: 0">
+                        <div class="dropdown-content">
+                            <a href="supply-chain">Inventory Check</a>
+                            <a href="reverse-engineering">Reverse Engineering</a>
+                            <a href="warehouse">Digital Warehouse</a>
+                            <a href="ondemand">On Demand</a>
+                            <a href="service">Service</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="contact">Kontakt</a>
+                <a href="quote" class="inverse">Angebot anfordern</a>
+            </div>
+            <img id="navtoggle" src="/images/menu.png" alt="Burger für Mobil">
+        </div>
+    </div>
+
+    <div class="mobile open">
+        <a href="supply-chain">Inventory Check</a>
+        <a href="reverse-engineering">Reverse Engineering</a>
+        <a href="warehouse">Warehouse</a>
+        <a href="ondemand">On Demand</a>
+        <a href="service">Service</a>
+        <a href="about">Über uns</a>
+        <a href="contact">Kontakt</a>
+        <a href="quote">Angebot anfordern</a>
+    </div>
+
+    {% block content %}
+    {% endblock content %}
+
+    <div class="footer">
+        <div class="sitemap container">
+            <span>CAS Casting 2024</span>
+            <a href="terms">AGBs</a> -
+            <a href="imprint">Impressum</a> -
+            <a href="data-protection">DSGVO</a>
+        </div>
+    </div>
+</body>
+
+</html>
