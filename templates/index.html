@@ -116,38 +116,42 @@
 
     <div class="topbar">
         <div class="navbar container">
-            <a href="start"><img src="/images/logo_nebeinander.png" alt="Logo von CAS Casting" height="50" /></a>
+            {%- set index = get_section(path="_index.md", lang=lang) -%}
+            <a href="{{ index.permalink }}"><img src="/images/logo_nebeinander.png" alt="Logo von CAS Casting"
+                    height="50" /></a>
             <div class="space"></div>
             <div class="desktop">
-                <a href="about">Über uns</a>
+                {%- set about = get_page(path="about.md", lang=lang) -%}
+                <a href="{{ about.permalink }}">{{ about.title }}</a>
                 <div class="dropdown-container">
-                    <a href="dienstleistungen">Dienstleistungen</a>
+                    {%- set service = get_section(path="service/_index.md", lang=lang) -%}
+                    <a>{{ service.title }}</a>
                     <div style="position: relative; width: 0; height: 0">
                         <div class="dropdown-content">
-                            <a href="supply-chain">Inventory Check</a>
-                            <a href="reverse-engineering">Reverse Engineering</a>
-                            <a href="warehouse">Digital Warehouse</a>
-                            <a href="ondemand">On Demand</a>
-                            <a href="service">Service</a>
+                            {%- for p in service.pages %}
+                            <a href="{{ p.permalink}}">{{ p.title }}</a>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
-                <a href="contact">Kontakt</a>
-                <a href="quote" class="inverse">Angebot anfordern</a>
+                {%- set contact = get_page(path="contact.md", lang=lang) -%}
+                <a href="{{ contact.permalink }}">{{ contact.title }}</a>
+                {%- set quote = get_page(path="quote.md", lang=lang) -%}
+                <a href="{{ quote.permalink }}" class="inverse">{{ quote.title }}</a>
             </div>
             <img id="navtoggle" src="/images/menu.png" alt="Burger für Mobil">
         </div>
     </div>
 
     <div class="mobile open">
-        <a href="supply-chain">Inventory Check</a>
-        <a href="reverse-engineering">Reverse Engineering</a>
-        <a href="warehouse">Warehouse</a>
-        <a href="ondemand">On Demand</a>
-        <a href="service">Service</a>
-        <a href="about">Über uns</a>
-        <a href="contact">Kontakt</a>
-        <a href="quote">Angebot anfordern</a>
+        {%- set service = get_section(path="service/_index.md", lang=lang) -%}
+        {%- for p in service.pages %}
+        <a href="{{ p.permalink}}">{{ p.title }}</a>
+        {% endfor %}
+        {%- set index = get_section(path="_index.md", lang=lang) -%}
+        {%- for p in index.pages %}
+        <a href="{{ p.permalink}}">{{ p.title }}</a>
+        {% endfor %}
     </div>
 
     {% block content %}
@@ -156,9 +160,10 @@
     <div class="footer">
         <div class="sitemap container">
             <span>CAS Casting 2024</span>
-            <a href="terms">AGBs</a> -
-            <a href="imprint">Impressum</a> -
-            <a href="data-protection">DSGVO</a>
+            {%- set info = get_section(path="info/_index.md", lang=lang) -%}
+            {%- for p in info.pages %}
+            <a href="{{ p.permalink}}">{{ p.title }}</a>
+            {% endfor %}
         </div>
     </div>
 </body>

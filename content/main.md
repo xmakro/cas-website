@@ -1,5 +1,5 @@
 +++
-title = "Start"
+title = ""
 
 [extra]
 image = "/images/Startseite_komprimiert.jpg"

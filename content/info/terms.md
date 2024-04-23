@@ -1,14 +1,15 @@
 +++
-title = "Terms"
+title = "AGBs"
+weight = 1
 
 [extra]
-image = "images/impressum_komprimiert.jpg"
+image = "/images/impressum_komprimiert.jpg"
 image_alt="Computerbildschirm mit technischen Zeichnungen in einer industriellen Werkstattumgebung mit sichtbaren Werkzeugen und Ausrüstungen."
 large = ""
 small = ""
 +++
 
-# Allgemeine Geschäftsbedingungen (AGB) der CAS Casting UG (haftungsbeschränkt)
+## Allgemeine Geschäftsbedingungen (AGB) der CAS Casting UG (haftungsbeschränkt)
 
 ## Geltungsbereich und Vertragspartner
 

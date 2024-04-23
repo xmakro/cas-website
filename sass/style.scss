@@ -188,11 +188,11 @@ p {
         background: rgba(0, 0, 0, 0.4);
         padding: 0.3rem 1rem;
     }
+}
 
-    .container {
-        max-width: 1150px;
-        margin: auto;
-    }
+.container {
+    max-width: 1150px;
+    margin: auto;
 }
 
 .content {
@@ -290,11 +290,11 @@ p {
     }
 }
 
-.sidelinks {
-    display: flex;
-    flex-direction: column;
+aside {
+    .sidelinks {
+        display: flex;
+        flex-direction: column;
 
-    aside {
         a {
             color: black;
             margin-left: 20px;

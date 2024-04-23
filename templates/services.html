@@ -18,11 +18,10 @@
     <aside>
         <h3>Our Services</h3>
         <div class="sidelinks">
-            <a href="supply-chain">Inventory Check</a>
-            <a href="reverse-engineering">Reverse Engineering</a>
-            <a href="warehouse">Digital Warehouse</a>
-            <a href="ondemand">On Demand Manufacturing</a>
-            <a href="service">Service</a>
+            {%- set service = get_section(path="service/_index.md") -%}
+            {%- for p in service.pages %}
+            <a href="{{ p.permalink}}">{{ p.title }}</a>
+            {% endfor %}
         </div>
     </aside>
 </div>

@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% block title %}{{ page.title | safe }}{% endblock %}
+
+{% block content %}
+<div class="header">
+    <img src="{{ page.extra.image }}" alt="{{ page.extra.image_alt }}">
+    <div class="headertext container">
+        <div class="large">{{ page.extra.large }}</div>
+        <div class="small">{{ page.extra.small }}</div>
+    </div>
+</div>
+
+<div class="content container sidepanel">
+    <main>
+        <form onsubmit="handleSubmit(event)">
+            <input type="hidden" name="subject" value="Webformular" />
+            <h2>Kontakt</h2>
+            <p><label>Name</label> <input type="text" name="name" required></p>
+            <p><label>E-Mail</label> <input type="text" name="email" required></p>
+            <p><label>{{ page.extra.form_phone }}</label> <input type="text" name="phone"></p>
+            <p><label>{{ page.extra.form_text }}</label> <textarea name="text" rows="8" required></textarea></p>
+            <div id="g-recaptcha" data-sitekey="6Le10aEpAAAAANMNnVxrcNHAKHD13vffgRy7scht"></div>
+            <button type="submit">{{ page.extra.form_submit }}</button>
+        </form>
+    </main>
+    <aside>
+        <h4>{{ page.extra.side_address }}:</h4>
+        <div>CAS Casting UG (haftungsbeschränkt)<br>Kirchplatz 5<br>86937 Scheuring</div>
+        <h4>{{ page.extra.side_phone }}:</h4>
+        <div><img src="/images/telefonnummer.png" style="height: 1.4rem;"></div>
+        <h4>E-Mail:</h4>
+        <div><img src="/images/Email_zugeschnitten.png" style="height: 1.4rem;"></div>
+    </aside>
+</div>
+{% endblock %}

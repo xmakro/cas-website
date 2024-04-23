@@ -1,6 +1,6 @@
 +++
 title = "Reverse Engineering"
-template = "services.html"
+weight = 2
 
 [extra]
 image = "/images/REVERSEENGINEERING_komprimiert.jpg"
